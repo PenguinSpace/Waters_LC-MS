@@ -73,15 +73,6 @@ def format_sample(file_path='', return_path='', sep_files=False, file_names=None
             for compound in target['compound_name']:
                 new_file = str(compound) + '.csv'
 
-                # this is redundant. The None in file_names will not allow
-                # this to happen. Consider removing it
-                try:
-                    file_names.append(new_file)
-                except TypeError:
-                    print('The file_names variable needs to be list')
-                    return 2
-                # print(new_file)
-
         # this for loop writes all the dataframes to their respective file names
         for compound in target['compound_name']:
             mask = data['compound_name'] == compound
